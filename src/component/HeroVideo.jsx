@@ -4,7 +4,7 @@ export default function HeroVideo() {
 
       {/* VIDEO */}
       <video
-        src="../public/hero.mp4"
+        src="/hero.mp4"
         autoPlay
         loop
         muted

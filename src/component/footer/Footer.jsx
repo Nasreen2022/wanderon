@@ -23,7 +23,7 @@ export default function Footer() {
           "Rajasthan", "Nagaland"
         ]} />
 
-        <FooterColumn title="WanderOn Special" items={[
+        <FooterColumn title="Tripvocation Special" items={[
           "Community Trips", "Honeymoon Trips",
           "Corporate Trips", "Weekend Getaways"
         ]} />
@@ -42,7 +42,7 @@ export default function Footer() {
       {/* COMPANY INFO */}
       <div className="text-center px-6">
         <h2 className="text-xl font-bold text-white tracking-wide">
-          WANDERON EXPERIENCES PVT LTD
+          TRIPVOCATION EXPERIENCES PVT LTD
         </h2>
 
         <p className="mt-2 text-sm text-gray-400">
@@ -55,9 +55,9 @@ export default function Footer() {
         </p>
 
         <div className="mt-4 flex flex-wrap justify-center gap-6 text-sm">
-          <span>hello@wanderon.in</span>
+          <span>hello@tripvocation.in</span>
           <span>+91-9090403075</span>
-          <span>www.wanderon.in</span>
+          <span>www.tripvocation.in</span>
         </div>
       </div>
 
@@ -82,7 +82,7 @@ export default function Footer() {
 
       {/* COPYRIGHT */}
       <div className="text-center text-sm text-gray-400 py-6 border-t border-gray-700">
-        © WANDERON EXPERIENCES PVT LTD, All rights reserved.
+        © TRIPVOCATION EXPERIENCES PVT LTD, All rights reserved.
       </div>
 
     </footer>
