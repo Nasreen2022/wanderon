@@ -5,7 +5,10 @@ import HeroVideo from './component/HeroVideo'
 import JourneyFrames from './component/JourneyFrames'
 import Navbar from './component/navbar/Navbar'
 import ReviewsBar from './component/ReviewsBar'
+import VideoBannerSlider from './component/VideoBannerSlider'
 import WhyWanderOn from './component/WhyWanderOn'
+import PromoVideo from './component/PromoVideo'
+import ExperienceBanner from './component/ExperienceBanner'
 
 function App() {
 
@@ -14,6 +17,9 @@ function App() {
       <Navbar/>
       <HeroVideo/>
       <ReviewsBar/>
+      <ExperienceBanner/>
+      <PromoVideo/>
+      <VideoBannerSlider/>
       <JourneyFrames/>
       <WhyWanderOn/>
       <CallbackSection/>
