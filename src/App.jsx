@@ -9,6 +9,9 @@ import VideoBannerSlider from './component/VideoBannerSlider'
 import WhyWanderOn from './component/WhyWanderOn'
 import PromoVideo from './component/PromoVideo'
 import ExperienceBanner from './component/ExperienceBanner'
+import RomanticEscapes from './component/RomanticEscapes'
+import ExploreIndia from './component/ExploreIndia'
+import InternationalTrips from './component/InternationalTrips'
 
 function App() {
 
@@ -20,6 +23,9 @@ function App() {
       <ExperienceBanner/>
       <PromoVideo/>
       <VideoBannerSlider/>
+      <InternationalTrips/>
+      <ExploreIndia/>
+      <RomanticEscapes/>
       <JourneyFrames/>
       <WhyWanderOn/>
       <CallbackSection/>
