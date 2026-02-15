@@ -4,53 +4,55 @@ import { AiFillStar } from "react-icons/ai";
 
 export default function ReviewsBar() {
   return (
-    <section className="bg-[#f4fbfc] py-6">
-      <div className="max-w-5xl mx-auto flex items-center justify-center gap-16 flex-wrap">
+    <section className="bg-[#f4fbfc] py-4">
+      <div className="max-w-md md:max-w-4xl mx-auto px-4">
 
-        {/* Google */}
-        <ReviewItem
-          icon={<FaGoogle className="text-3xl" />}
-          rating="4.9"
-          reviews="14001 reviews"
-        />
+        {/* 3 equal columns */}
+        <div className="grid grid-cols-3 text-center items-center">
 
-        {/* TripAdvisor */}
-        <ReviewItem
-          icon={<SiTripadvisor className="text-3xl text-green-600" />}
-          rating="5.0"
-          reviews="3850 reviews"
-        />
+          <ReviewItem
+            icon={<FaGoogle className="text-[28px] text-[#EA4335]" />}
+            rating="4.9"
+            reviews="14001"
+          />
 
-        {/* Facebook */}
-        <ReviewItem
-          icon={<FaFacebookF className="text-3xl text-blue-600" />}
-          rating="4.9"
-          reviews="1031 reviews"
-        />
+          <ReviewItem
+            icon={<SiTripadvisor className="text-[28px] text-green-600" />}
+            rating="5.0"
+            reviews="3850"
+          />
+
+          <ReviewItem
+            icon={<FaFacebookF className="text-[26px] text-blue-600" />}
+            rating="4.9"
+            reviews="1031"
+          />
+
+        </div>
 
       </div>
     </section>
   );
 }
 
+/* ================= ITEM ================= */
+
 function ReviewItem({ icon, rating, reviews }) {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex flex-col items-center gap-1">
 
-      {/* Platform Icon */}
-      <div className="flex items-center justify-center w-10 h-10">
-        {icon}
+      {/* Star + rating */}
+      <div className="flex items-center gap-1 text-sm font-semibold">
+        <AiFillStar className="text-yellow-400 text-sm" />
+        {rating}
       </div>
 
-      {/* Rating Text */}
-      <div className="text-sm">
-        <div className="flex items-center gap-1 font-semibold">
-          <AiFillStar className="text-yellow-400" />
-          {rating}
-        </div>
-        <div className="text-gray-600 text-xs">
-          ({reviews})
-        </div>
+      {/* Icon */}
+      <div>{icon}</div>
+
+      {/* Reviews */}
+      <div className="text-xs text-gray-600 whitespace-nowrap">
+        ({reviews} reviews)
       </div>
 
     </div>

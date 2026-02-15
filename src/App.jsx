@@ -12,6 +12,8 @@ import ExperienceBanner from './component/ExperienceBanner'
 import RomanticEscapes from './component/RomanticEscapes'
 import ExploreIndia from './component/ExploreIndia'
 import InternationalTrips from './component/InternationalTrips'
+import UpcomingCommunityTrips from './component/UpcomingCommunityTrips'
+import UpcomingTrips from './component/UpcomingTrips'
 
 function App() {
 
@@ -23,8 +25,10 @@ function App() {
       <ExperienceBanner/>
       <PromoVideo/>
       <VideoBannerSlider/>
+      <UpcomingCommunityTrips/>
       <InternationalTrips/>
       <ExploreIndia/>
+      <UpcomingTrips/>
       <RomanticEscapes/>
       <JourneyFrames/>
       <WhyWanderOn/>
