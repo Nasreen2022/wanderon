@@ -1,67 +1,74 @@
 import { Search, Phone, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function TopNavbar({ menuOpen, setMenuOpen }) {
+  const navLinks = [
+    { name: "Early Bird Offer", path: "/early-bird" },
+    { name: "Upcoming Trips", path: "/upcoming" },
+    { name: "Corporate Tours", path: "#" },
+    { name: "Blogs", path: "#" },
+    { name: "About Us", path: "#" },
+    { name: "Payments", path: "#" },
+  ];
+
   return (
     <div className="bg-white border-b">
       <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
 
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="h-10 w-10 bg-[#08a8c7] rounded-full"></div>
-          <span className="font-bold text-[#08a8c7]">
-            WANDERON
-          </span>
-        </div>
+        <Link to="/" className="flex items-center gap-2">
+          <div className="h-10 w-10 bg-[#08a8c7] rounded-full" />
+          <span className="font-bold text-[#08a8c7]">WANDERON</span>
+        </Link>
 
-        {/* Search (Desktop only) */}
+        {/* Search */}
         <div className="hidden lg:block flex-1 max-w-md mx-6 relative">
           <input
             type="text"
             placeholder="Where do you want to go?"
             className="w-full pl-5 pr-10 py-2 border border-[#08a8c7] rounded-full outline-none"
           />
-          <Search
-            size={18}
-            className="absolute right-4 top-2.5 text-[#08a8c7]"
-          />
+          <Search className="absolute right-4 top-2.5 text-[#08a8c7]" size={18} />
         </div>
 
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-700">
-          <span>Early Bird Offer</span>
-          <span>Upcoming Trips</span>
-          <span>Corporate Tours</span>
-          <span>Blogs</span>
-          <span>About Us</span>
-          <span>Payments</span>
+          {navLinks.map((link, i) => (
+            <Link key={i} to={link.path} className="hover:text-[#08a8c7]">
+              {link.name}
+            </Link>
+          ))}
 
-          <button className="flex items-center gap-2 border border-[#08a8c7] text-[#08a8c7] px-4 py-2 rounded-full">
+          <a
+            href="tel:+919090403075"
+            className="flex items-center gap-2 border border-[#08a8c7] text-[#08a8c7] px-4 py-2 rounded-full"
+          >
             <Phone size={16} />
             +91-9090403075
-          </button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
+        <button className="lg:hidden" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
-
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Menu */}
       {menuOpen && (
         <div className="lg:hidden bg-white border-t">
           <div className="p-4 space-y-4 text-sm">
 
-            <div className="border-b pb-2">Early Bird Offer</div>
-            <div className="border-b pb-2">Upcoming Trips</div>
-            <div className="border-b pb-2">Corporate Tours</div>
-            <div className="border-b pb-2">Blogs</div>
-            <div className="border-b pb-2">About Us</div>
-            <div className="border-b pb-2">Payments</div>
+            {navLinks.map((link, i) => (
+              <Link
+                key={i}
+                to={link.path}
+                onClick={() => setMenuOpen(false)}
+                className="block border-b pb-2"
+              >
+                {link.name}
+              </Link>
+            ))}
 
             {/* Mobile Search */}
             <div className="relative">
@@ -70,18 +77,16 @@ export default function TopNavbar({ menuOpen, setMenuOpen }) {
                 placeholder="Where do you want to go?"
                 className="w-full pl-5 pr-10 py-2 border rounded-full"
               />
-              <Search
-                size={18}
-                className="absolute right-4 top-2.5 text-gray-400"
-              />
+              <Search className="absolute right-4 top-2.5 text-gray-400" size={18} />
             </div>
 
-            {/* Phone CTA */}
-            <button className="w-full flex items-center justify-center gap-2 border border-[#08a8c7] text-[#08a8c7] px-4 py-2 rounded-full">
+            <a
+              href="tel:+919090403075"
+              className="w-full flex items-center justify-center gap-2 border border-[#08a8c7] text-[#08a8c7] px-4 py-2 rounded-full"
+            >
               <Phone size={16} />
               +91-9090403075
-            </button>
-
+            </a>
           </div>
         </div>
       )}
