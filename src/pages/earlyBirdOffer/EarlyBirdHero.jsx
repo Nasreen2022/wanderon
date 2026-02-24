@@ -5,7 +5,7 @@ export default function EarlyBirdHero() {
     <section className="relative w-full">
 
       {/* ===== HERO CONTAINER ===== */}
-      <div className="relative h-[420px] md:h-[520px] lg:h-[560px] w-full overflow-hidden">
+      <div className="relative h-[460px] sm:h-[500px] md:h-[520px] lg:h-[560px] w-full overflow-hidden">
 
         {/* Background Image */}
         <img
@@ -21,7 +21,7 @@ export default function EarlyBirdHero() {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
 
           {/* Heading */}
-          <h1 className="text-3xl md:text-5xl font-bold text-center drop-shadow-lg">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center drop-shadow-lg">
             Early Bird Offer 2026
           </h1>
 
@@ -31,7 +31,7 @@ export default function EarlyBirdHero() {
           </div>
 
           {/* CTA Button */}
-          <button className="mt-8 flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full shadow-lg transition">
+          <button className="mt-8 flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 md:px-8 py-3 rounded-full shadow-lg transition">
             <Ticket size={18} />
             Book Your Voucher
           </button>
@@ -41,8 +41,8 @@ export default function EarlyBirdHero() {
         {/* ===== VOUCHER COUNTER RIGHT SIDE ===== */}
         <div
           className="
-          absolute right-6 md:right-12
-          bottom-16 md:bottom-20
+          absolute left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-12
+          bottom-6 md:bottom-20
           text-white text-center
           "
         >
@@ -53,7 +53,7 @@ export default function EarlyBirdHero() {
           <div
             className="
             bg-black/40 backdrop-blur-md
-            px-8 py-6 rounded-xl
+            px-6 md:px-8 py-4 md:py-6 rounded-xl
             text-2xl md:text-3xl font-bold
             shadow-lg
             "

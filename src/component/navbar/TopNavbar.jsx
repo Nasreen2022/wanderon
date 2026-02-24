@@ -1,14 +1,15 @@
 import { Search, Phone, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import logoImg from "../../assets/tripvocationlogo.jpeg";
 
 export default function TopNavbar({ menuOpen, setMenuOpen }) {
   const navLinks = [
     { name: "Early Bird Offer", path: "/early-bird" },
     { name: "Upcoming Trips", path: "/upcoming" },
-    { name: "Corporate Tours", path: "#" },
-    { name: "Blogs", path: "#" },
-    { name: "About Us", path: "#" },
-    { name: "Payments", path: "#" },
+    { name: "Corporate Tours", path: "/corporate-tours" },
+    { name: "Blogs", path: "/blogs" },
+    { name: "About Us", path: "/about-us" },
+    { name: "Payments", path: "/payments" },
   ];
 
   return (
@@ -16,9 +17,12 @@ export default function TopNavbar({ menuOpen, setMenuOpen }) {
       <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <div className="h-10 w-10 bg-[#08a8c7] rounded-full" />
-          <span className="font-bold text-[#08a8c7]">WANDERON</span>
+        <Link to="/" className="flex items-center">
+          <img
+            src={logoImg}
+            alt="WanderOn logo"
+            className="h-14 w-auto object-contain"
+          />
         </Link>
 
         {/* Search */}

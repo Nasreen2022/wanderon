@@ -146,9 +146,9 @@ const scrollRight = () => {
       <div className="max-w-6xl mx-auto px-4 md:px-8">
 
         {/* ================= HEADER ================= */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
 
-          <h2 className="text-[24px] font-semibold text-gray-900">
+          <h2 className="text-2xl font-semibold text-gray-900">
             Upcoming Community Trips
           </h2>
 
@@ -207,12 +207,12 @@ const scrollRight = () => {
           {/* CARDS */}
           <div
             ref={sliderRef}
-            className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar"
+            className="flex gap-4 md:gap-6 overflow-x-auto scroll-smooth no-scrollbar pb-1"
           >
             {trips.map((trip, i) => (
               <div
                 key={i}
-                className="w-[250px] h-[340px] rounded-xl overflow-hidden
+                className="w-[78vw] max-w-[260px] sm:w-[230px] md:w-[250px] h-[320px] sm:h-[340px] rounded-xl overflow-hidden
                 relative shadow-md border border-gray-200 flex-shrink-0 group"
               >
 

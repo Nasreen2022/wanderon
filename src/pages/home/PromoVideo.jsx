@@ -1,7 +1,7 @@
 export default function PromoVideo() {
   return (
-    <section className="py-14 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-10 md:py-14 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Banner Container */}
         <div className="rounded-lg overflow-hidden shadow-md flex items-center justify-center">
@@ -14,7 +14,7 @@ export default function PromoVideo() {
             loop
             playsInline
             preload="auto"
-            className="max-w-full max-h-full object-contain"
+            className="w-full h-auto max-h-[70vh] object-contain"
           />
 
         </div>

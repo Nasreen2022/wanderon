@@ -7,8 +7,8 @@ export default function ReviewsBar() {
     <section className="bg-[#f4fbfc] py-4">
       <div className="max-w-md md:max-w-4xl mx-auto px-4">
 
-        {/* 3 equal columns */}
-        <div className="grid grid-cols-3 text-center items-center">
+        {/* Responsive columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-0 text-center items-center">
 
           <ReviewItem
             icon={<FaGoogle className="text-[28px] text-[#EA4335]" />}

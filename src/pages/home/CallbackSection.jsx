@@ -2,8 +2,8 @@ import { User, Phone, Mail, MessageSquare } from "lucide-react";
 
 export default function CallbackSection() {
   return (
-    <section className="bg-[#08a8c7] py-20">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="bg-[#08a8c7] py-12 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 items-center">
 
         {/* LEFT ILLUSTRATION */}
         <div className="flex justify-center">
@@ -15,13 +15,13 @@ export default function CallbackSection() {
         </div>
 
         {/* RIGHT FORM CARD */}
-        <div className="bg-white rounded-xl shadow-lg p-8 max-w-md w-full mx-auto">
+        <div className="bg-white rounded-xl shadow-lg p-5 sm:p-6 md:p-8 max-w-md w-full mx-auto">
 
           <p className="text-[#08a8c7] font-semibold">
             Wanderlust Calling?
           </p>
 
-          <h2 className="text-2xl font-bold mt-1 mb-6">
+          <h2 className="text-xl sm:text-2xl font-bold mt-1 mb-6">
             Allow Us to Call You Back!
           </h2>
 

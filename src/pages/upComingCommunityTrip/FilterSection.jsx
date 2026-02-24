@@ -4,11 +4,10 @@ import AllTripCard from "./AllTripCard";
 
 export default function FilterSection() {
   const months = [
-    "Jan-26","Feb-26","Mar-26","Apr-26","May-26","Jun-26",
-    "Jul-26","Aug-26","Sep-26","Oct-26","Nov-26","Dec-26"
+    "Jan-26", "Feb-26", "Mar-26", "Apr-26", "May-26", "Jun-26",
+    "Jul-26", "Aug-26", "Sep-26", "Oct-26", "Nov-26", "Dec-26",
   ];
 
-  // ---------------- ORIGINAL TRIPS DATA ----------------
   const trips = [
     {
       id: 1,
@@ -82,16 +81,13 @@ export default function FilterSection() {
     },
   ];
 
-  // ---------------- FILTER STATE ----------------
   const [selectedMonth, setSelectedMonth] = useState("");
   const [filteredTrips, setFilteredTrips] = useState(trips);
 
-  // ---------------- MONTH FILTER ----------------
   const handleMonthFilter = (month) => {
     setSelectedMonth(month);
 
     const monthName = month.split("-")[0];
-
     const result = trips.filter((trip) =>
       trip.date.toLowerCase().includes(monthName.toLowerCase())
     );
@@ -100,17 +96,12 @@ export default function FilterSection() {
   };
 
   return (
-    <section className="bg-gray-100 py-10">
+    <section className="bg-gray-100 py-8 md:py-10">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-
-        {/* ================= STICKY MONTH BAR ================= */}
-        {/* Change top-[80px] if your navbar height different */}
-        <div className="sticky top-[80px] z-30 bg-gray-100 py-4 mb-8 shadow-sm">
-
-          <div className="flex items-center gap-3 overflow-x-auto">
-
-            <button className="min-w-[40px] h-[40px] rounded-full bg-gray-200 shrink-0">
-              ‹
+        <div className="md:sticky md:top-[80px] z-30 bg-gray-100 py-3 md:py-4 mb-6 md:mb-8 shadow-sm">
+          <div className="flex items-center gap-2 md:gap-3 overflow-x-auto no-scrollbar">
+            <button className="min-w-[36px] h-[36px] md:min-w-[40px] md:h-[40px] rounded-full bg-gray-200 shrink-0">
+              &lt;
             </button>
 
             {months.map((month) => (
@@ -118,7 +109,7 @@ export default function FilterSection() {
                 key={month}
                 onClick={() => handleMonthFilter(month)}
                 className={`
-                  px-6 py-3 border rounded-lg whitespace-nowrap transition
+                  px-4 md:px-6 py-2.5 md:py-3 border rounded-lg whitespace-nowrap text-sm md:text-base transition
                   ${
                     selectedMonth === month
                       ? "bg-black text-white"
@@ -130,34 +121,26 @@ export default function FilterSection() {
               </button>
             ))}
 
-            <button className="min-w-[40px] h-[40px] rounded-full bg-gray-200 shrink-0">
-              ›
+            <button className="min-w-[36px] h-[36px] md:min-w-[40px] md:h-[40px] rounded-full bg-gray-200 shrink-0">
+              &gt;
             </button>
-
           </div>
         </div>
 
-        {/* ================= FILTER + TRIPS ================= */}
         <div className="flex flex-col lg:flex-row gap-8">
-
-          {/* LEFT SIDEBAR */}
           <div className="lg:w-[300px] shrink-0">
             <FilterSidebar />
           </div>
 
-          {/* RIGHT TRIPS */}
           <div className="flex-1">
-            <h2 className="text-xl font-semibold mb-4">
-              All Upcoming Trips
-            </h2>
+            <h2 className="text-xl font-semibold mb-4">All Upcoming Trips</h2>
 
-            {/* SHOW ONLY 6 VISIBLE + SCROLLABLE */}
             <div
               className="
                 grid md:grid-cols-2 gap-6
-                max-h-[720px]
-                overflow-y-auto
-                pr-2
+                md:max-h-[720px]
+                md:overflow-y-auto
+                md:pr-2
               "
             >
               {filteredTrips.map((trip) => (
@@ -165,9 +148,7 @@ export default function FilterSection() {
               ))}
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );

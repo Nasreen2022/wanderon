@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 
 const images = [
@@ -16,22 +16,24 @@ const images = [
 ];
 
 export default function Journey() {
-  const [index, setIndex] = useState(0);
+  const sliderRef = useRef(null);
 
-  const prev = () => {
-    if (index > 0) setIndex(index - 1);
-  };
-
-  const next = () => {
-    if (index < images.length - 4) setIndex(index + 1);
+  const scrollByCard = (direction) => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+    const card = slider.querySelector("[data-journey-card]");
+    if (!card) return;
+    const gap = 24;
+    const amount = card.clientWidth + gap;
+    slider.scrollBy({ left: direction * amount, behavior: "smooth" });
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-12 md:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Title */}
-        <h2 className="text-3xl font-bold text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-center">
           JOURNEY IN FRAMES
         </h2>
         <p className="text-center text-gray-600 mt-2">
@@ -39,29 +41,28 @@ export default function Journey() {
         </p>
 
         {/* Gallery */}
-        <div className="relative mt-14">
+        <div className="relative mt-8 md:mt-14">
 
           {/* Left Arrow */}
           <button
-            onClick={prev}
+            onClick={() => scrollByCard(-1)}
             className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10
                        bg-[#08a8c7] text-white w-10 h-10 rounded-full
                        items-center justify-center disabled:opacity-40"
-            disabled={index === 0}
           >
             <ChevronLeft />
           </button>
 
           {/* Frames */}
-          <div className="overflow-hidden">
-            <div
-              className="flex gap-6 transition-transform duration-500"
-              style={{ transform: `translateX(-${index * 260}px)` }}
-            >
+          <div
+            ref={sliderRef}
+            className="flex gap-4 md:gap-6 overflow-x-auto scroll-smooth no-scrollbar pb-2"
+          >
               {images.map((item, i) => (
                 <div
                   key={i}
-                  className="w-[240px] h-[360px] rounded-xl overflow-hidden
+                  data-journey-card
+                  className="w-[200px] sm:w-[220px] md:w-[240px] h-[300px] sm:h-[330px] md:h-[360px] rounded-xl overflow-hidden
                              shadow-lg relative flex-shrink-0"
                 >
                   <img
@@ -79,16 +80,14 @@ export default function Journey() {
                   </div>
                 </div>
               ))}
-            </div>
           </div>
 
           {/* Right Arrow */}
           <button
-            onClick={next}
+            onClick={() => scrollByCard(1)}
             className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10
                        bg-[#08a8c7] text-white w-10 h-10 rounded-full
                        items-center justify-center disabled:opacity-40"
-            disabled={index >= images.length - 4}
           >
             <ChevronRight />
           </button>

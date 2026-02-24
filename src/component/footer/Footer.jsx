@@ -4,10 +4,32 @@ import {
   FaLinkedinIn,
   FaYoutube,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import logoImg from "../../assets/tripvocationlogo.jpeg";
 
 export default function Footer() {
+  const quickLinks = [
+    { label: "About Us", path: "/about-us" },
+    { label: "Corporate Tours", path: "/corporate-tours" },
+    { label: "Privacy Policy", path: "/privacy-policy" },
+    { label: "Terms & Conditions", path: "/terms-and-conditions" },
+    { label: "Customer Success & Support", path: "/customer-success-support" },
+    { label: "Disclaimer", path: "/disclaimer" },
+    { label: "Careers", path: "/careers" },
+    { label: "Blogs", path: "/blogs" },
+    { label: "Payments", path: "/payments" },
+  ];
+
   return (
     <footer className="bg-[#0f2226] text-gray-300 pt-16">
+      {/* Logo at top of footer */}
+      <div className="flex justify-center mb-8">
+        <img
+          src={logoImg}
+          alt="Tripvocation logo"
+          className="h-16 w-auto object-contain"
+        />
+      </div>
 
       {/* TOP LINKS */}
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-10">
@@ -28,11 +50,7 @@ export default function Footer() {
           "Corporate Trips", "Weekend Getaways"
         ]} />
 
-        <FooterColumn title="Quick Links" items={[
-          "About Us", "Privacy Policy", "Terms & Conditions",
-          "Customer Success & Support", "Disclaimer",
-          "Careers", "Blogs", "Payments"
-        ]} />
+        <FooterColumn title="Quick Links" items={quickLinks} />
 
       </div>
 
@@ -98,14 +116,26 @@ function FooterColumn({ title, items }) {
         {title}
       </h3>
       <ul className="space-y-2 text-sm">
-        {items.map((item, index) => (
-          <li
-            key={index}
-            className="hover:text-white cursor-pointer"
-          >
-            {item}
-          </li>
-        ))}
+        {items.map((item, index) => {
+          if (typeof item === "string") {
+            return (
+              <li
+                key={index}
+                className="hover:text-white cursor-pointer"
+              >
+                {item}
+              </li>
+            );
+          }
+
+          return (
+            <li key={item.label}>
+              <Link to={item.path} className="hover:text-white cursor-pointer">
+                {item.label}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

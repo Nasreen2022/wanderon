@@ -8,11 +8,11 @@ export default function AllTripCard({ trip }) {
         overflow-hidden
         hover:shadow-md transition
         w-full
-        h-[160px] sm:h-[140px]
+        h-auto sm:h-[140px]
       "
     >
       {/* ---------- IMAGE ---------- */}
-      <div className="w-full sm:w-[160px] shrink-0">
+      <div className="w-full h-36 sm:h-auto sm:w-[160px] shrink-0">
         <img
           src={trip.image}
           alt={trip.title}
@@ -42,7 +42,7 @@ export default function AllTripCard({ trip }) {
         <div className="flex items-center justify-between gap-2 mt-2">
 
           {/* PRICE — smaller */}
-          <div className="bg-gray-100 rounded-full px-2 py-1 text-xs flex items-center">
+          <div className="bg-gray-100 rounded-full px-2 py-1 text-xs flex items-center flex-wrap">
             <span className="line-through text-gray-400 mr-1 whitespace-nowrap">
               ₹{trip.oldPrice}
             </span>

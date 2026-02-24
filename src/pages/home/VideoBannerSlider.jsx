@@ -14,12 +14,20 @@ export default function VideoBannerSlider() {
   const [pause, setPause] = useState(false);
   const videoRefs = useRef([]);
 
+  const next = () =>
+    setCurrent((prev) => (prev + 1) % videos.length);
+
+  const prev = () =>
+    setCurrent((prev) => (prev - 1 + videos.length) % videos.length);
+
   /* Auto Slide */
   useEffect(() => {
     if (pause) return;
-    const timer = setInterval(next, 6000);
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % videos.length);
+    }, 6000);
     return () => clearInterval(timer);
-  }, [current, pause]);
+  }, [pause]);
 
   /* Play only active video */
   useEffect(() => {
@@ -31,12 +39,6 @@ export default function VideoBannerSlider() {
       } else video.pause();
     });
   }, [current]);
-
-  const next = () =>
-    setCurrent((prev) => (prev + 1) % videos.length);
-
-  const prev = () =>
-    setCurrent((prev) => (prev - 1 + videos.length) % videos.length);
 
   return (
     <section className="py-8 md:py-12 bg-gray-100">
