@@ -1,9 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { FaGoogle, FaFacebookF } from "react-icons/fa";
+import { SiTripadvisor } from "react-icons/si";
+import { AiFillStar } from "react-icons/ai";
 
 export default function EarlyBirdTestimonials() {
+  /* ================= STATES ================= */
   const [index, setIndex] = useState(0);
   const cardsToShow = 2;
 
+  /* auto detect card width */
+  const cardRef = useRef(null);
+  const [cardWidth, setCardWidth] = useState(0);
+
+  useEffect(() => {
+    if (cardRef.current) {
+      const gap = 32; // gap-8 = 32px
+      setCardWidth(cardRef.current.offsetWidth + gap);
+    }
+  }, []);
+
+  /* ================= DATA ================= */
   const testimonials = [
     {
       name: "Akshay Kadam",
@@ -33,35 +49,46 @@ export default function EarlyBirdTestimonials() {
 
       {/* ================= HEADER ================= */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-900">Testimonials</h2>
-        <p className="text-gray-500 mt-2">The word on the street</p>
+        <h2 className="text-3xl font-bold text-gray-900">
+          Testimonials
+        </h2>
 
-        {/* ===== RATING ICONS ROW ===== */}
+        <p className="text-gray-500 mt-2">
+          The word on the street
+        </p>
+
+        {/* ===== REVIEWS BAR ===== */}
         <div className="flex justify-center gap-14 mt-6">
 
           <div className="text-center">
-            <div className="flex items-center gap-2 justify-center">
-              <img src="/icons/google.png" className="w-7" />
-              <span className="text-yellow-400">★</span>
-              <span className="font-semibold">4.9</span>
+            <div className="flex items-center justify-center gap-2">
+              <FaGoogle className="text-[26px] text-[#EA4335]" />
+              <div className="flex items-center gap-1 font-semibold">
+                <AiFillStar className="text-yellow-400 text-sm" />
+                4.9
+              </div>
             </div>
             <p className="text-gray-500 text-sm">(14001 reviews)</p>
           </div>
 
           <div className="text-center">
-            <div className="flex items-center gap-2 justify-center">
-              <img src="/icons/tripadvisor.png" className="w-7" />
-              <span className="text-yellow-400">★</span>
-              <span className="font-semibold">5.0</span>
+            <div className="flex items-center justify-center gap-2">
+              <SiTripadvisor className="text-[26px] text-green-600" />
+              <div className="flex items-center gap-1 font-semibold">
+                <AiFillStar className="text-yellow-400 text-sm" />
+                5.0
+              </div>
             </div>
             <p className="text-gray-500 text-sm">(3850 reviews)</p>
           </div>
 
           <div className="text-center">
-            <div className="flex items-center gap-2 justify-center">
-              <img src="/icons/facebook.png" className="w-7" />
-              <span className="text-yellow-400">★</span>
-              <span className="font-semibold">4.9</span>
+            <div className="flex items-center justify-center gap-2">
+              <FaFacebookF className="text-[24px] text-blue-600" />
+              <div className="flex items-center gap-1 font-semibold">
+                <AiFillStar className="text-yellow-400 text-sm" />
+                4.9
+              </div>
             </div>
             <p className="text-gray-500 text-sm">(1031 reviews)</p>
           </div>
@@ -69,18 +96,13 @@ export default function EarlyBirdTestimonials() {
         </div>
       </div>
 
-      {/* ================= SLIDER ================= */}
+      {/* ================= TESTIMONIAL SLIDER ================= */}
       <div className="max-w-5xl mx-auto px-4 relative overflow-hidden">
 
         {/* LEFT ARROW */}
         <button
           onClick={() => setIndex((prev) => Math.max(prev - 1, 0))}
-          className="
-            absolute left-0 top-1/2 -translate-y-1/2 z-10
-            w-10 h-10 rounded-full border bg-white
-            flex items-center justify-center
-            hover:bg-gray-100
-          "
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full border bg-white flex items-center justify-center hover:bg-gray-100"
         >
           ←
         </button>
@@ -92,14 +114,15 @@ export default function EarlyBirdTestimonials() {
           <div
             className="flex gap-8 transition-transform duration-500"
             style={{
-              transform: `translateX(-${(index * 100) / cardsToShow}%)`,
+              transform: `translateX(-${index * cardWidth}px)`,
             }}
           >
             {testimonials.map((item, i) => (
               <div
                 key={i}
+                ref={i === 0 ? cardRef : null}
                 className="
-                  basis-[calc((100%-32px)/2)]
+                  w-[480px]  /* YOUR CARD SIZE (unchanged) */
                   flex-shrink-0
                   border-4 border-[#b9dbe6]
                   rounded-3xl
@@ -114,6 +137,7 @@ export default function EarlyBirdTestimonials() {
                   <div className="p-[3px] rounded-full border-4 border-[#59b6c9]">
                     <img
                       src={item.image}
+                      alt={item.name}
                       className="w-14 h-14 rounded-full object-cover"
                     />
                   </div>
@@ -122,7 +146,14 @@ export default function EarlyBirdTestimonials() {
                     <h3 className="font-semibold text-gray-800">
                       {item.name}
                     </h3>
-                    <div className="text-yellow-400 text-sm">★★★★★</div>
+
+                    <div className="flex text-yellow-400 text-sm">
+                      <AiFillStar />
+                      <AiFillStar />
+                      <AiFillStar />
+                      <AiFillStar />
+                      <AiFillStar />
+                    </div>
                   </div>
                 </div>
 
@@ -151,12 +182,7 @@ export default function EarlyBirdTestimonials() {
               Math.min(prev + 1, testimonials.length - cardsToShow)
             )
           }
-          className="
-            absolute right-0 top-1/2 -translate-y-1/2 z-10
-            w-10 h-10 rounded-full border bg-white
-            flex items-center justify-center
-            hover:bg-gray-100
-          "
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full border bg-white flex items-center justify-center hover:bg-gray-100"
         >
           →
         </button>
