@@ -16,6 +16,7 @@ import TermsAndConditions from "./pages/termsAndConditions/TermsAndConditions";
 import CustomerSuccessSupport from "./pages/customerSupport/CustomerSuccessSupport";
 import Disclaimer from "./pages/disclaimer/Disclaimer";
 import Careers from "./pages/careers/Careers";
+import Ladakh from "./pages/IndiaTrips/Ladakh/Ladakh";  
 
 // custom utility
 import ScrollToTop from "./component/ScrollToTop";
@@ -39,6 +40,8 @@ function App() {
         <Route path="/customer-success-support" element={<CustomerSuccessSupport />} />
         <Route path="/disclaimer" element={<Disclaimer />} />
         <Route path="/careers" element={<Careers />} />
+        {/* ----------------India Trip------------------ */}
+        <Route path="/india/ladakh" element={<Ladakh />} />
       </Routes>
       <Footer />
     </BrowserRouter>
