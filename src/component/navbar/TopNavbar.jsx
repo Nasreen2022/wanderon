@@ -44,11 +44,11 @@ export default function TopNavbar({ menuOpen, setMenuOpen }) {
           ))}
 
           <a
-            href="tel:+919090403075"
+            href="tel:+918077726794"
             className="flex items-center gap-2 border border-[#08a8c7] text-[#08a8c7] px-4 py-2 rounded-full"
           >
             <Phone size={16} />
-            +91-9090403075
+            +91-8077726794
           </a>
         </div>
 
@@ -85,11 +85,11 @@ export default function TopNavbar({ menuOpen, setMenuOpen }) {
             </div>
 
             <a
-              href="tel:+919090403075"
+              href="tel:+918077726794"
               className="w-full flex items-center justify-center gap-2 border border-[#08a8c7] text-[#08a8c7] px-4 py-2 rounded-full"
             >
               <Phone size={16} />
-              +91-9090403075
+              +91-8077726794
             </a>
           </div>
         </div>

@@ -139,11 +139,11 @@ export default function Payments() {
             <div className="mt-5 space-y-3 text-sm">
               <p className="inline-flex items-center gap-2 text-gray-700">
                 <Phone size={16} className="text-[#08a8c7]" />
-                +91-9090403075
+                +918077726794
               </p>
               <p className="inline-flex items-center gap-2 text-gray-700">
                 <FileText size={16} className="text-[#08a8c7]" />
-                hello@tripvocation.in
+                zaidkhan.khan9@gmail.com
               </p>
               <p className="inline-flex items-center gap-2 text-gray-700">
                 <BadgeHelp size={16} className="text-[#08a8c7]" />

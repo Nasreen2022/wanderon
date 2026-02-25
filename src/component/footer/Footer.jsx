@@ -68,13 +68,12 @@ export default function Footer() {
         </p>
 
         <p className="mt-4 text-sm max-w-3xl mx-auto leading-relaxed">
-          3rd Floor, Building No-436, Phase IV, Udyog Vihar,
-          Sector-18, Gurugram, Haryana-122015
+          Flor 2nd falt no. 6 alisha appartment Bansal nagar, fatehabad road , Agra
         </p>
 
         <div className="mt-4 flex flex-wrap justify-center gap-6 text-sm">
-          <span>hello@tripvocation.in</span>
-          <span>+91-9090403075</span>
+          <span>zaidkhan.khan9@gmail.com</span>
+          <span>+918077726794</span>
           <span>www.tripvocation.in</span>
         </div>
       </div>

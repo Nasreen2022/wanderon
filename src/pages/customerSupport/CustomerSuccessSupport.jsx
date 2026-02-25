@@ -4,13 +4,13 @@ const supportChannels = [
   {
     icon: Phone,
     title: "Call Support",
-    detail: "+91-9090403075",
+    detail: "+918077726794",
     note: "For urgent booking and travel assistance",
   },
   {
     icon: Mail,
     title: "Email Support",
-    detail: "hello@tripvocation.in",
+    detail: "zaidkhan.khan9@gmail.com",
     note: "For detailed queries and documentation help",
   },
   {
@@ -90,11 +90,11 @@ export default function CustomerSuccessSupport() {
             </p>
             <p className="mt-3 inline-flex items-center gap-2 text-sm text-gray-200">
               <Phone size={16} />
-              +91-9090403075
+              +918077726794
             </p>
             <p className="mt-3 inline-flex items-center gap-2 text-sm text-gray-200">
               <Mail size={16} />
-              hello@tripvocation.in
+              zaidkhan.khan9@gmail.com
             </p>
             <p className="mt-6 text-sm text-gray-300 leading-relaxed">
               For faster resolution, keep your booking ID, travel dates, and registered contact details handy.

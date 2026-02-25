@@ -98,7 +98,7 @@ export default function Careers() {
             </p>
             <p className="mt-5 inline-flex items-center gap-2 text-sm text-gray-200">
               <Mail size={16} />
-              careers@tripvocation.in
+              zaidkhan.khan9@gmail.com
             </p>
             <p className="mt-2 inline-flex items-center gap-2 text-sm text-gray-200">
               <MapPin size={16} />

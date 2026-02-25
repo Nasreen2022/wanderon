@@ -123,13 +123,13 @@ export default function PrivacyPolicy() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-12">
           <h2 className="text-2xl font-bold">Contact for Privacy Queries</h2>
           <p className="mt-3 text-sm text-gray-300">
-            Email: hello@tripvocation.in
+            Email: zaidkhan.khan9@gmail.com
           </p>
           <p className="text-sm text-gray-300">
-            Phone: +91-9090403075
+            Phone: +918077726794
           </p>
           <p className="text-sm text-gray-300">
-            Address: 3rd Floor, Building No-436, Phase IV, Udyog Vihar, Sector-18, Gurugram, Haryana-122015
+            Address: Flor 2nd falt no. 6 alisha appartment Bansal nagar, fatehabad road , Agra
           </p>
         </div>
       </section>

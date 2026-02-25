@@ -172,11 +172,11 @@ export default function CorporateTours() {
               <div className="grid sm:grid-cols-2 gap-3">
                 <div className="rounded-xl border p-3">
                   <p className="text-xs text-gray-500">Business Travel Desk</p>
-                  <p className="text-sm font-semibold mt-1">corporate@tripvocation.in</p>
+                  <p className="text-sm font-semibold mt-1">zaidkhan.khan9@gmail.com</p>
                 </div>
                 <div className="rounded-xl border p-3">
                   <p className="text-xs text-gray-500">Direct Contact</p>
-                  <p className="text-sm font-semibold mt-1">+91-9090403075</p>
+                  <p className="text-sm font-semibold mt-1">+918077726794</p>
                 </div>
               </div>
 
