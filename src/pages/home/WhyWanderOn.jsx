@@ -12,33 +12,33 @@ export default function WhyWanderOn() {
 
         {/* Section Title */}
         <h2 className="text-3xl font-bold text-center mb-14">
-          Why Tripvocation?
+          Why Choose Tripvocation?
         </h2>
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
           <WhyCard
-            title="No Third Party Mess"
-            desc="100 percent in-house operations for all trips! No third parties involved, hence no fishy claims!"
+            title="Fully Managed Experiences"
+            desc="Every journey is planned and executed by our own expert team — no outsourcing, no confusion, just complete control and accountability."
             icon={<ShieldCheck size={56} />}
           />
 
           <WhyCard
-            title="Transparency & Security"
-            desc="Real time monitoring of all trips by ground team! All routes and weather conditions are accurately updated!"
+            title="Clear & Reliable Operations"
+            desc="Our ground crew actively monitors each trip, tracking routes and conditions to ensure everything runs smoothly and safely."
             icon={<Eye size={56} />}
           />
 
           <WhyCard
-            title="Co-Travelers Filtering"
-            desc="Multi-step filtering to bring only like-minded people together! That's our key to have fuss-free trips!"
+            title="Thoughtfully Matched Travelers"
+            desc="We bring together compatible travelers through a careful screening process, creating comfortable, like-minded travel groups."
             icon={<Filter size={56} />}
           />
 
           <WhyCard
-            title="One Stop Hassle Free Experience"
-            desc="Comfortable stays, trained drivers, hospitable staff and friendly trip leaders put together that one memorable trip for you!"
+            title="Seamless End-to-End Service"
+            desc="From quality stays and professional drivers to supportive trip leaders, we handle every detail so you simply enjoy the journey."
             icon={<BadgeCheck size={56} />}
           />
 

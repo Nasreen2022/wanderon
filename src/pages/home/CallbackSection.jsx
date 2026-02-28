@@ -18,7 +18,7 @@ export default function CallbackSection() {
         <div className="bg-white rounded-xl shadow-lg p-5 sm:p-6 md:p-8 max-w-md w-full mx-auto">
 
           <p className="text-[#08a8c7] font-semibold">
-            Wanderlust Calling?
+            Tripvocation Calling?
           </p>
 
           <h2 className="text-xl sm:text-2xl font-bold mt-1 mb-6">

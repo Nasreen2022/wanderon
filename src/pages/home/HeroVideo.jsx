@@ -19,7 +19,7 @@ export default function HeroVideo() {
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
 
         <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-          Global Community of Travelers
+          Passionate Travelers Network
         </h1>
 
         <p className="mt-3 md:mt-4 text-xl sm:text-2xl md:text-3xl font-semibold text-yellow-400">

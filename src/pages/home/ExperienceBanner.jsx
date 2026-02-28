@@ -30,11 +30,11 @@ export default function ExperienceBanner() {
               px-3 py-1 mb-3 rotate-[-6deg]
               "
             >
-              THE
+              Let 
             </span>
 
             <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight">
-              EXPERIENCE
+              The Journey 
             </h2>
 
             <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-black text-yellow-400">
@@ -42,7 +42,7 @@ export default function ExperienceBanner() {
             </h1>
 
             <p className="text-sm sm:text-base font-semibold mt-2">
-              STARTS NOW !
+              Begin!
             </p>
 
             {/* Curved Arrow — Desktop only */}
@@ -86,9 +86,7 @@ export default function ExperienceBanner() {
               "
             >
               <p className="text-gray-800 font-semibold text-sm sm:text-base leading-relaxed">
-                We’ve just raised 54 Cr. in Series A Funding,
-                one of the largest rounds in India’s experiential
-                travel space.
+                We design unforgettable journeys that blend comfort, discovery, and seamless travel experiences worldwide.
               </p>
             </div>
           </div>
@@ -106,23 +104,23 @@ export default function ExperienceBanner() {
             "
           >
             <p>
-              More{" "}
+              Travel {" "}
               <span className="bg-yellow-400 text-black px-2 py-1">
-                Destinations
+                Smart.
               </span>
             </p>
 
             <p>
-              More{" "}
+              Stay {" "}
               <span className="bg-yellow-400 text-black px-2 py-1">
-                Events
+                Inspired
               </span>
             </p>
 
             <p>
-              Unforgettable{" "}
+              Explore {" "}
               <span className="bg-yellow-400 text-black px-2 py-1">
-                Trips
+                More.
               </span>
             </p>
           </div>
